@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EyeMovement : MonoBehaviour {
+public class eyemovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -31,11 +31,16 @@ public class EyeMovement : MonoBehaviour {
         float mousePosX = Input.mousePosition.x;
         float mousePosY = Input.mousePosition.y;
         int scrollDistance = 5;
-        float scrollSpeed = 70f;
+        //float scrollSpeed = 70;
 
         //Horizontal camera movement
         if (mousePosX < scrollDistance)
             transform.Translate(-1, 0, 1);
+        if (mousePosX >= Screen.width - scrollDistance)
+            transform.Translate(1, 0, -1);
+
+        if (mousePosY < scrollDistance)
+            transform.Translate(-1, 0, -1);
         if (mousePosY >= Screen.height - scrollDistance)
             transform.Translate(1, 0, 1);
 
@@ -46,7 +51,7 @@ public class EyeMovement : MonoBehaviour {
         }
         if(Input.GetAxis("Mouse ScrollWheel") < 0 && Eye.GetComponent<Camera>().orthographicSize < 80)
         {
-            Eye.GetComponent<Camera>().orthographicSize = Eye.GetComponent<Camera>().orthographicSize = 4;
+            Eye.GetComponent<Camera>().orthographicSize = Eye.GetComponent<Camera>().orthographicSize + 4;
         }
 
         //Default zoom
