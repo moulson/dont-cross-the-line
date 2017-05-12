@@ -86,6 +86,7 @@
   <ItemGroup>
     <Compile Include="Assets\camera-control\scripts\eyemovement.cs" />
     <Compile Include="Assets\camera-control\scripts\followplayer.cs" />
+    <Compile Include="Assets\scripts\placeobstacles.cs" />
     <Compile Include="Assets\scripts\thelinebehaviour.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
